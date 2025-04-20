@@ -72,27 +72,46 @@ With Mau, you can deploy your application in just a few clicks, allowing you to 
 
 ## Resources
 
-Check out a few resources that may come in handy when working with NestJS:
+Ch🌱 Seeder Script Setup & Execution
+To test performance and pagination at scale, we implemented a custom seeder script that populates the database with 10,000 dummy blog posts. This helps simulate a production-like environment with a large dataset.
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+🛠️ Libraries Used
+The script uses the following libraries:
 
-## Support
+faker – To generate realistic mock data for post titles, content, and authors.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+mongoose – For database connection and operations.
 
-## Stay in touch
+dotenv – To load environment variables from the .env file (e.g., MongoDB URI).
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Install dependencies if not already present:
 
-## License
+bash
+Copy
+Edit
+npm install faker mongoose dotenv
+📁 Script Location
+The seeder script is located at:
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+bash
+Copy
+Edit
+/scripts/seed-posts.ts
+🚀 How to Run the Seeder
+Use the following command to execute the script using the TypeScript compiler and Node:
+
+bash
+Copy
+Edit
+npx tsc scripts/seed-posts.ts && node scripts/seed-posts.js
+Or, if you're compiling the whole project:
+
+bash
+Copy
+Edit
+npm run build
+node dist/scripts/seed-posts.js
+✅ Ensure that your .env file is properly configured with a valid MONGODB_URI before running the script.
+
+✅ Result
+After execution, your MongoDB database will be populated with 10,000 published posts, ready to be fetched via the API and rendered in the frontend with full pagination support.
