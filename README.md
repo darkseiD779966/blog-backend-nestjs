@@ -1,7 +1,44 @@
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
+🧱 Backend Architecture Overview
+This project is a well-structured NestJS microservice designed to support a scalable and secure blog platform. The backend is modular, extensible, and follows clean code principles using TypeScript and modern development patterns.
 
+🧩 Modules Breakdown
+The application is composed of three core modules:
+
+🔐 Auth Module
+Handles all authentication logic and is built using Passport.js strategies. It supports:
+
+JWT Authentication: Secure token-based authentication system with JWT strategy and custom guards.
+
+OAuth Integration:
+
+Google Strategy
+
+Facebook Strategy
+
+Auth Guards & Interceptors:
+
+Guards restrict access to protected routes.
+
+Interceptors enhance response validation and standardize API responses.
+
+Token generation, validation, and user context injection are all centralized for clarity and reuse.
+
+✍️ Posts Module
+Responsible for managing blog posts and follows domain-driven design patterns.
+
+Controllers: Handle API routes (create, read, update, delete, etc.)
+
+Services: Contain business logic.
+
+Repositories: Encapsulate all DB interactions via Mongoose.
+
+Schemas (MongoDB): Define structure for post documents.
+
+DTOs: Ensure type-safe data validation and transfer.
+ 
 📄 Environment Configuration
 Before running the application or seeder scripts, make sure to set up a .env file at the root of your project.
 
