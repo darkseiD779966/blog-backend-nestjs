@@ -52,6 +52,6 @@ export class AuthController {
   @UseGuards(AuthGuard('facebook'))
   async facebookAuthRedirect(@Req() req, @Res() res) {
     const jwt = await this.authService.validateOAuthLogin(req.user);
-    return res.redirect(`http://localhost:4200/login/success?token=${jwt}`);
+    return res.redirect(`http://localhost:4200/auth/callback?token=${jwt}`);
   }
 }
