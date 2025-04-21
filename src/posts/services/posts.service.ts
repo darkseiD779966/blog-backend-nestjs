@@ -33,7 +33,7 @@ export class PostsService {
 
   async update(userId: string, postId: string, dto: UpdatePostDto) {
     const post = await this.postsRepository.findById(postId);
-    if (!post) throw new NotFoundException('Post not found');
+    if (!post) throw new NotFoundException('not found');
     if (post.authorId.toString() !== userId) throw new ForbiddenException();
     return this.postsRepository.update(postId, dto);
   }
