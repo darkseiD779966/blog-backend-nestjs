@@ -87,7 +87,7 @@ export class PostsController {
   async findOne(@Param('id') id: string) {
     const post = await this.postsService.findById(id);
     if (!post || !post.isPublished) {
-      throw new NotFoundException('Post not found or unpublish');
+      throw new NotFoundException('Post not found or unpublished');
     }
     return post;
   }
