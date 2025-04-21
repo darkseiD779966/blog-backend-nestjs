@@ -39,6 +39,6 @@ async function seedPosts() {
 }
 
 seedPosts().catch((err) => {
-  console.error('❌ Seeding failed:', err);
+  console.error(' Seeding failed:', err);
   process.exit(1);
 });
